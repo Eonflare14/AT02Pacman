@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cf61d992b44a444782c64f2a6dc2801
+guid: 4fb8607443b1449489b64f813ee0f0c6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -15,12 +15,7 @@ ModelImporter:
   - first:
       74: 2845759425010373711
     second: Armature|move
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ghastly
-    second: {fileID: 2100000, guid: d2d0e7bcb606bbd42ab09ae9d8508cb3, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
