@@ -15,7 +15,17 @@ ModelImporter:
   - first:
       74: 2845759425010373711
     second: Armature|move
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ghastly
+    second: {fileID: 2100000, guid: bb9fc648c403bff4c86f52fe88f1d12c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ghastly
+    second: {fileID: 2800000, guid: a8a42f6485908a24e8ea6f82ad723fcd, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
