@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     //Serialized variables
     [SerializeField] private float powerUpTime = 10;
-    [SerializeField] private Text scoreText;
+    [SerializeField] private Text scoreText, endScreenScoreText;
     [SerializeField] private Transform bonusItemSpawn;
     [SerializeField] private Bounds ghostSpawnBounds;
     [SerializeField] private GameObject endPanel;
@@ -103,14 +103,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Game Manager: End Panel has not been assigned!");
         }
         //Set score text value
-        if (scoreText != null)
-        {
-            scoreText.text = $"Score: {score}";
-        }
-        else
-        {
-            Debug.LogError("Game Manager: Score Text has not been assigned!");
-        }
+        UpdateScoreText(score);
     }
 
     /// <summary>
@@ -141,14 +134,7 @@ public class GameManager : MonoBehaviour
         //Add score
         score += value;
         //Set score text value
-        if (scoreText != null)
-        {
-            scoreText.text = $"Score: {score}";
-        }
-        else
-        {
-            Debug.LogError("Game Manager: Score Text has not been assigned!");
-        }
+        UpdateScoreText(score);
 
         if(type == 0)
         {
@@ -212,13 +198,27 @@ public class GameManager : MonoBehaviour
         //Add score
         score += 5;
         //Set score text value
-        if (scoreText != null)
-        {
-            scoreText.text = $"Score: {score}";
-        }
+        UpdateScoreText(score);
         aSrc.PlayOneShot(eatGhostClip);
         //Respawn
         ghost.SetState(ghost.RespawnState);
+    }
+
+    /// <summary>
+    /// Updates score text
+    /// </summary>
+    /// <param name="score"></param>
+    private void UpdateScoreText(int score)
+    {
+        if ( (scoreText != null) && (endScreenScoreText != null) )
+        {
+            scoreText.text = $"Score: {score}";
+            endScreenScoreText.text = $"Final Score: {score}";
+        }
+        else
+        {
+            Debug.LogError("Game Manager: Score Text and/or End Screen Score Text has not been assigned!");
+        }
     }
 
     /// <summary>
